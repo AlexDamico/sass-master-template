@@ -1,0 +1,22 @@
+//============================================
+// Layout Options
+//============================================
+
+@import "mixins";
+
+// Basic classes for text alignment
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+// Universal wall-to-wall flex row
+.bridge {
+	@include flexbox(center, space-between);
+	width: 100%;
+	text-align: center;
+	> * {
+		flex: 1;
+		&:first-child { text-align: left; }
+		&:last-child { text-align: right; }
+	}
+}

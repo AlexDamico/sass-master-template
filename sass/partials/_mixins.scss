@@ -1,0 +1,62 @@
+//============================================
+// Mixins
+//============================================
+
+
+// Prevents highlighting -- Used for UI elements to prevent accidental highlighting
+@mixin ui {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+// Resets factory standard UI styles -- Used to un-style input elements to re-style across all browsers
+@mixin reset-appearance {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+// Prefixed filter style for adjusting element brightness -- Included for cross-browser compatability
+@mixin brightness($value) {
+	-webkit-filter: brightness($value);
+	filter: brightness($value);
+}
+
+// Prefixed mixin for altering input placeholder color -- Needed for cross-browser compatability
+@mixin placeholder($color) {
+	&::-webkit-input-placeholder { color: $color; }
+	&::-moz-placeholder { color: $color; }
+	&:-ms-input-placeholder { color: $color; }
+	&:-moz-placeholder { color: $color; }
+}
+
+// One-line solution to position an element -- Valid positions: absolute, fixed, sticky
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $margin: null) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	margin: $margin;
+}
+
+// One-line solution to make an element a flexbox -- Mostly used to vertically center elements (align-items: center) and/or space elements evenly apart (justify-content: space-between)
+@mixin flexbox($align-items: null, $justify-content: null, $flex-direction: null, $flex-wrap: null) {
+	display: flex;
+	align-items: $align-items;
+	justify-content: $justify-content;
+	flex-direction: $flex-direction;
+	flex-wrap: $flex-wrap;
+}
+
+// One-line solution to style typography -- Used primarily in ./style/typography.scss
+@mixin typography($family, $size, $weight, $line-height: null, $letter-spacing: null, $text-transform: null) {
+	font-family: $family;
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $line-height;
+	text-transform: $text-transform;
+	letter-spacing: $letter-spacing;
+}

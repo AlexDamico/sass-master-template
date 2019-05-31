@@ -1,0 +1,36 @@
+//============================================
+// UI Elements
+//============================================
+
+
+// Prevents default outline on focused input elements and standardizes box-sizing
+* {
+	outline: none;
+	box-sizing: border-box;
+	&:hover, &:active, &:focus {
+		outline: none !important;
+	}
+}
+
+// Universal easing on UI elements and adds a pointer to interactive elements
+a, button, .button, input[type="submit"], .interactive {
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s;
+	&:hover {
+		@include brightness(85%);
+		text-decoration: none;
+	}
+}
+
+// Basic classes for (un)styling lists
+ul {
+	&.unstyled {
+		list-style-type: none;
+		padding: 0;
+	}
+	&.inline {
+		list-style-type: none;
+		li { display: inline-block; }
+	}
+}

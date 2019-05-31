@@ -1,0 +1,35 @@
+//============================================
+// Typography
+//============================================
+
+@import "mixins";
+
+// Sample font import
+@font-face {
+	src: url();
+	font-family: 'Font Family';
+}
+
+// Root typography styles
+body {
+
+	// Global header reset
+	h1, h2, h3, h4, h5, h6, strong, p { margin: 0; }
+
+	// Base font
+	@include typography('Font Family', 20px, normal, 28px, 0.5px, null);
+
+	// Header styles -- Font, size, weight, line-height, letter-spacing, text-transform
+	h1 { @include typography('Font Family', 54px, bold, 54px, 2px, null); }
+	h2 { @include typography('Font Family', 36px, normal, 55px, 0.75px, null); }
+	h3 { @include typography('Font Family', 32px, bold, 38px, 0.5px, null); }
+	h4 { @include typography('Font Family', 24px, 600, 28px, 0.5px); }
+	h5 { @include typography('Font Family', 18px, 500, 24px, 0.5px, null); }
+	h6 { @include typography('Font Family', 16px, normal, 24px, 0.5px, null); }
+
+	// Form labels
+	label { @include typography('Font Family', 18px, 400, 21px); }
+
+	// Small text (w/ class variant)
+	small, .small { @include typography('Font Family', 16px, 300, 24px, 0.5px, null); }
+}
